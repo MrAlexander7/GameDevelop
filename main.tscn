@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://blwqgye1jxbme"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_6yrbg"]
+[ext_resource type="Texture2D" uid="uid://gj22ein7y4ms" path="res://icon.svg" id="2_p7h5o"]
+[ext_resource type="PackedScene" uid="uid://dtgdnfgbq2k28" path="res://coin.tscn" id="3_rw2pr"]
+[ext_resource type="PackedScene" uid="uid://f1gm0i6s8hyi" path="res://hero.tscn" id="4_rpr0t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_to537"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_6yrbg")
+
+[node name="icon" type="Sprite2D" parent="."]
+position = Vector2(77, 88)
+texture = ExtResource("2_p7h5o")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 15.0
+offset_top = 165.0
+offset_right = 130.0
+offset_bottom = 205.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_to537")
+
+[node name="Coin" parent="." instance=ExtResource("3_rw2pr")]
+position = Vector2(33, 36)
+
+[node name="Hero" parent="." instance=ExtResource("4_rpr0t")]
