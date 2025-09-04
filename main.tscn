@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://blwqgye1jxbme"]
+[gd_scene load_steps=8 format=3 uid="uid://blwqgye1jxbme"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_6yrbg"]
 [ext_resource type="Texture2D" uid="uid://gj22ein7y4ms" path="res://icon.svg" id="2_p7h5o"]
 [ext_resource type="PackedScene" uid="uid://dtgdnfgbq2k28" path="res://coin.tscn" id="3_rw2pr"]
 [ext_resource type="PackedScene" uid="uid://f1gm0i6s8hyi" path="res://hero.tscn" id="4_rpr0t"]
+[ext_resource type="Script" path="res://coin.gd" id="4_v8ltb"]
+[ext_resource type="Script" path="res://hero.gd" id="6_hy3ml"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_to537"]
 
@@ -30,5 +32,7 @@ shape = SubResource("RectangleShape2D_to537")
 
 [node name="Coin" parent="." instance=ExtResource("3_rw2pr")]
 position = Vector2(33, 36)
+script = ExtResource("4_v8ltb")
 
 [node name="Hero" parent="." instance=ExtResource("4_rpr0t")]
+script = ExtResource("6_hy3ml")
